@@ -23,6 +23,7 @@ class PhotosRepository(
     private suspend fun fetchPhotos(): List<PhotoRaw> {
         val fetchedPhotos = service.fetchPhotos()
         dataSource.insertPhotos(fetchedPhotos)
+        println("Got 1 ${fetchedPhotos.size}")
         return fetchedPhotos
     }
 }

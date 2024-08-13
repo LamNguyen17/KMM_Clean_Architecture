@@ -77,28 +77,54 @@ struct PhotoItemView: View {
     var photo: Photo
     
     var body: some View {
-        
-        VStack(alignment: .leading, spacing: 8) {
-            KFImage(URL(string: photo.previewURL))
-                .placeholder {
-                    ProgressView()
+        VStack (alignment: .leading) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    KFImage(URL(string: photo.previewURL))
+                        .placeholder {
+                            ProgressView()
+                        }
+                        .resizable()
+                        .cacheOriginalImage()
+                        .cancelOnDisappear(true)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100) // Set the width and height
+                        .cornerRadius(50) // Set the corner radius
+                        .clipShape(RoundedRectangle(cornerRadius: 50))
                 }
-                .resizable()
-                .cacheOriginalImage()
-                .cancelOnDisappear(true)
-                .cornerRadius(20)
-                .aspectRatio(contentMode: .fit)
-//                 .frame(maxWidth: .infinity, maxHeight: 200)
+                .frame(maxWidth: 120, alignment: .leading)
+                .padding([.leading], 12)
+                   
+                VStack(alignment: .leading) {
+                    Text(photo.user)
+                        .fontWeight(.bold)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                    
+                    Text("Thẻ: \(photo.tags)")
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                    
+                    Text("Lượt thích: \(photo.likes)")
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                    
+                    Text("Bình luận: \(photo.comments)")
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 0)
+                
+                
+            }.padding([.top, .bottom, .trailing], 16)
             
-            Text("\(photo.user)")
-                .font(.title)
-                .fontWeight(.bold)
-//            Text("Thẻ: \(String(describing: {photo.tags}))")
-//            Text("Lượt thích: \(photo.likes)")
-//            Text("Bình luận: \(photo.comments)")
         }
-        .padding(16)
-        
+        .background(Color.white)
+        .frame(maxWidth: .infinity) // Make the VStack fill the width
+        .cornerRadius(16)
+        .shadow(radius: 5)
+        .padding([.leading, .trailing], 12)
     }
 }
 
