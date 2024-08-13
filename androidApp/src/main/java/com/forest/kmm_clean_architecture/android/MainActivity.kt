@@ -9,6 +9,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.forest.kmm_clean_architecture.Greeting
+import com.forest.kmm_clean_architecture.android.presentation.features.ArticlesScreen
+import com.forest.kmm_clean_architecture.article.presentation.ArticlesViewModel
+import com.forest.kmm_clean_architecture.android.presentation.features.PhotosScreen
+import com.forest.kmm_clean_architecture.photo.presentation.PhotosViewModel
+import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +24,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingView(Greeting().greet())
+//                    GreetingView(Greeting().greet())
+//                    val articlesViewModel: ArticlesViewModel = koinViewModel()
+//                    ArticlesScreen(articlesViewModel)
+
+                    val photosViewModel: PhotosViewModel = koinViewModel()
+                    PhotosScreen(photosViewModel)
                 }
             }
         }
