@@ -5,7 +5,8 @@ struct ContentView: View {
 	let greet = Greeting().greet()
 
 	var body: some View {
-		Text(greet)
+        PhotosScreen(viewModel: .init())
+//		Text(greet)
 	}
 }
 

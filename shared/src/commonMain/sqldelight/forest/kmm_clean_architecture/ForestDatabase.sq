@@ -1,0 +1,36 @@
+--    Photo    --
+CREATE TABLE Photo (
+    id INTEGER NOT NULL PRIMARY KEY,
+    pageURL TEXT,
+    type TEXT,
+    tags TEXT,
+    previewURL TEXT,
+    previewWidth INTEGER,
+    previewHeight INTEGER,
+    webformatURL TEXT,
+    webformatWidth INTEGER,
+    webformatHeight INTEGER,
+    largeImageURL TEXT,
+    imageWidth INTEGER,
+    imageHeight INTEGER,
+    imageSize INTEGER,
+    views INTEGER,
+    downloads INTEGER,
+    collections INTEGER,
+    likes INTEGER,
+    comments INTEGER,
+    userId INTEGER,
+    user TEXT,
+    userImageURL TEXT
+);
+
+insertPhoto:
+INSERT INTO Photo(id, pageURL, type, tags, previewURL, previewWidth, previewHeight, webformatURL, webformatWidth, webformatHeight, largeImageURL, imageWidth, imageHeight, imageSize, views, downloads, collections, likes, comments, userId, user, userImageURL)
+VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+selectAllPhotos:
+SELECT Photo.*
+FROM Photo;
+
+removeAllPhotos:
+DELETE FROM Photo;
