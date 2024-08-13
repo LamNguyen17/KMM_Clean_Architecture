@@ -1,7 +1,6 @@
-package com.forestt176.kmm_clean_architecture.di
+package com.forest.kmm_clean_architecture.di
 
-import com.forestt176.kmm_clean_architecture.article.presentation.ArticlesViewModel
-import com.forestt176.kmm_clean_architecture.profile.presentation.ProfileViewModel
+import com.forest.kmm_clean_architecture.photo.presentation.PhotosViewModel
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.context.startKoin
@@ -13,10 +12,6 @@ fun initKoin() {
     }
 }
 
-class ArticlesInjector : KoinComponent {
-    val articlesViewModel: ArticlesViewModel by inject()
-}
-
-class ProfileInjector : KoinComponent {
-    val profileViewModel: ProfileViewModel by inject()
+class PhotosInjector : KoinComponent {
+    val photosViewModel: PhotosViewModel by inject()
 }
