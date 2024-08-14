@@ -9,9 +9,9 @@ apps
 
 This sample demonstrates how one can
 
-- Setup base architecture of Flutter app using Clean Architecture
-- Use dependency injection for layers separation
-- Make api calls using Axios plugin.
+- Setup base architecture of KMM (Kotlin Multiplatform Mobile) app using Clean Architecture
+- Use Koin(dependency injection) for layers separation
+- Make api calls using Ktor plugin.
 
 ```
 ├── androidApp
@@ -39,15 +39,19 @@ This sample demonstrates how one can
 ```
 
 #### Dependencies
-
-- [Dio](https://pub.dev/packages/dio) : http client
-- [Get_it](https://pub.dev/packages/get_it) : dependency injection
-- [Build runner](https://pub.dev/packages/build_runner) : The build_runner package provides a
-  concrete way of generating files using Dart code. Files are always generated directly on disk, and
-  rebuilds are incremental - inspired by tools such as Bazel
-- [Rxdart](https://pub.dev/packages/rxdart) : RxDart extends the capabilities of Dart Streams and
-  StreamControllers.
-- [Dartz](https://pub.dev/packages/dartz) : Functional programming in Dart.
+- [Kotlinx Coroutines Core](https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core) :
+  Library support for Kotlin coroutines with multiplatform support.
+- [Lifecycle ViewModel Kotlin Extensions](https://mvnrepository.com/artifact/androidx.lifecycle/lifecycle-viewmodel-ktx) :
+  Kotlin extensions for 'viewmodel' artifact
+- [SqlDelight](https://github.com/cashapp/sqldelight/) : SQLDelight generates typesafe Kotlin APIs from
+  your SQL statements. It verifies your schema, statements, and migrations at compile-time and provides
+  IDE features like autocomplete and refactoring which make writing and maintaining SQL simple.
+- [Koin](https://mvnrepository.com/artifact/io.insert-koin/koin-androidx-compose) : KOIN - Kotlin simple
+  Dependency Injection Framework
+- [Ktor](https://mvnrepository.com/artifact/io.ktor/ktor-client-core) : Ktor is a framework for quickly
+  creating web applications in Kotlin with minimal effort.
+- [Coil_Compose](https://mvnrepository.com/artifact/io.coil-kt/coil-compose) : An image loading library for
+  Android backed by Kotlin Coroutines.
 
 ## 🚀 Module Structure
 
@@ -70,6 +74,6 @@ There are 3 main modules to help separate the code. They are Data, Domain, and P
 
 ## 🚀 Screenshoots
 
-|               Default Search               |          Search keyword (ex: flo)          |
-|:------------------------------------------:|:------------------------------------------:|
-|            ![](assets/rs1.png)             |            ![](assets/rs2.png)             |
+|       Image        |                           |
+|:------------------:|:-------------------------:|
+| ![](assets/r3.png) |                           | 
