@@ -37,15 +37,14 @@ struct PhotosScreen: View {
     var body: some View {
         VStack {
             AppBar()
-            
             if viewModel.photosState.loading {
                 Loader()
             }
-            
+
             if let error = viewModel.photosState.error {
                 ErrorMessage(message: error)
             }
-            
+
             if(!viewModel.photosState.photos.isEmpty) {
                 ScrollView {
                     LazyVStack(spacing: 10) {
